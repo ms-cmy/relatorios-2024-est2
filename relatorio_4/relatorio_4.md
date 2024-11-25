@@ -4,6 +4,10 @@
     font-weight: bold;
     text-align: center;
   }
+
+  .sumario {
+    font-size: 26px;
+  }
 </style>
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -34,17 +38,45 @@ Raphael Marcelo Costa de Lima
 
 <p class="my-heading"> Sumário </p>
 
-<a href="#introducao"> Introdução</a>
+<a class="sumario" href="#introducao"> 1. Introdução</a>
 
-<a href="#objetivos"> Objetivos </a>
+<a href="#o-momento-magnético-e-momento-angular-do-spin">1.1 O momento magnético e momento angular do spin</a>
+<br>
+<a href="#Efeito do campo magnético no momento ângular">1.2 Efeito do campo magnético no momento ângular</a>
 
-<a href="#pros_exp"> Procedimento Experimental </a>
+<br>
+
+<a class="sumario" href="#objetivos"> 2. Objetivos </a>
+
+<a href="#fator-de-landé">2.1 Fator de Landé</a>
+<br>
+<a href="#dados-necessários">2.2 Dados Necessários</a>
+
+<br>
+
+<a class="sumario" href="#pros_exp"> 3 Procedimento Experimental </a>
+
+<a href="#materiais-utilizados">3.1 Materiais utilizados</a>
+<br>
+<a href="#fig_1"> 3.1.1 Figura 1 </a>
+<br>
+<a href="#tabela"> 3.1.2 Tabela de dados</a>
+<br>
+<a href="#fig_2"> 3.1.3 Visualização dos dados coletados</a>
+
+
+<a class="sumario" href="#dados"> Análise de dados </a>
+
+<br>
+
+<a class="sumario" href="#conclusao"> Conclusao </a>
 
 <div style="page-break-after: always;"></div>
 
 <p class="my-heading" id="introducao"> Introdução </p> 
 
-## O momento magnético e momento angular do spin:
+## O momento magnético e momento angular do spin
+
 
 $\large \vec{\mu_s} = - g_s \mu_B \frac{\vec{s}}{\hbar}$ (1) 
 
@@ -92,7 +124,7 @@ onde podemos isolar o v para chegar na fórmula presente no roteiro do experimen
 
 $\LARGE v = \frac{g_s \mu_b B}{h}$
 
-### Efeito do campo magnético no momento ângular
+## Efeito do campo magnético no momento ângular
 
 O campo magnético não afeta na magnetude do spin do momento angular (já que ele não faz parte da fórmula...), mas ele influencia a orientação de $\vec{s}$ em relação a direção do campo - o que queremos afimar com isso:
 
@@ -116,6 +148,8 @@ então sabemos que só poderemos ter esses 2 estados do elétron quando está so
 
 <p class="my-heading" id="objetivos"> Objetivos </p>
 
+## Fator de Landé
+
 Dada a introdução, sabemos que quando há um campo magnético, podemos observar a seguinte fórmula:
 
 $\LARGE v = \frac{g_s \mu_b \vec{B}}{h}$
@@ -128,6 +162,8 @@ $\mu_b$ é o magneton de Bohr $ = 9.274 \times 10^{-24}$
 então, temos como objetivo calcular $g_s$, a partir de dados coletados, desta maneira teremos como observar os 2 estados mostrados na introdução sobre o spin do elétron.
 
 o fator de Landé $g_s$ = 2 é o fator para o elétron.
+
+## Dados necessários
 
 com isso em mente montados um experimento que conseguimos ter a frequência e a corrente que foi passada nas bobinas. Assim podemos calcular o campo magnético, que é dado por:
 
@@ -150,6 +186,9 @@ assim, podemos tentar encontrar $g_s$
 
 <p class="my-heading", id="pros_exp"> Procedimento Experimental <p>
 
+
+## Materiais utilizados
+
 Lista dos materiais utilizados:
 
 - 1 multímetro MINPA ET2042C
@@ -160,8 +199,8 @@ Lista dos materiais utilizados:
 - 2 bobinas de Helmholtz
 
 conectamos os 4 cabos, a fonte, o multímetro (que será utilizado para medir a corrente entre a unidade de controle e as bobinas) e o gerador de radio-frequência.
-<center> <figure>
-<img src="image-1.png">
+<center> <figure id="fig_1">
+<img src="image-1.png" >
 <figcaption><b>Figura 1:</b> Experimento montado sem o osciloscópio fonte: relatório. </figcaption>
 </figure> </center>
 
@@ -207,11 +246,14 @@ B foi calculado a partir da fórmula disponível na parte de <b>objetivos</b>
 
 <div style="page-break-after: always;"></div>
 
-<p class="my-heading"> Análise de dados <p>
+<p class="my-heading" id="dados" > Análise de dados <p>
 
 Gráfico representando os dados que coletamos
 
+<figure id="fig_2">
 <img src="image-2.png"></img>
+<figcaption><b>Figura 2:</b> Visualização dos dados coletados Fonte: Autores </figcaption>
+</figure>
 
 
 Podemos fazer o método de mínimos quadrados entre <a href="#tabela"> B e MHz </a> de tal maneira que:
@@ -231,7 +273,6 @@ onde:
 $\LARGE a = \frac{g_s \mu_b}{h}$
 
 note que vamos fazer o mínimos quadrados com Hz e não MHz.
-
 <img src="image-3.png"></img>
 
 com o nosso valor de a:
@@ -240,8 +281,50 @@ a = 11535318040
 
 sabemos que multiplicarmos esse valor pela constante de planck e dividir por $ \mu_0 $, teremos:
 
-$g_s = 0.82$ (approx)
+$g_s = 0.824$ (approx)
 
 para calcular o erro que essa regressão contém, podemos fazer simulação de monte-carlo para estimar incertezas:
 
 
+o código abaixo pode ser encontrado [neste link](https://github.com/ms-cmy/relatorios-2024-est2/blob/master/relatorio_4/experimento.ipynb)
+
+
+```python
+a_values = []
+for _ in range(1000):
+    x_synthetic = df['I'].values + np.random.normal(0, df['I_err'])
+    x_synthetic = u0 * N * x_synthetic * (4/5) ** (3/2)/R
+    
+    X = x_synthetic.reshape(-1, 1)
+    Y = df['MHz'].values.reshape(-1, 1) * 1e6
+    
+    model = LinearRegression(fit_intercept=False)
+    model.fit(X, Y)
+    
+    a_values.append(model.coef_[0][0])
+
+a_mean = np.mean(a_values)
+a_std = np.std(a_values)
+```
+
+na simulação, encontramos que:
+
+$g_s = 0.824 +- 0.017$
+
+sabendo que o valor teórico é 2, o nosso dado está bem fora do esperado.
+
+compatibilidade:
+
+$|0.824 - 2| / 0.017 < 2 * $ erro menor que 2 desvios padrões
+
+$70 < 2$
+
+o que é bem distante de 2.
+
+<div style="page-break-after: always;"></div>
+
+<p class="my-heading" id="conclusao"> Conclusão <p>
+
+o valor que encontramos é incompatível com o valor esperado.
+Podemos levantar alguns pontos para isso, como a dificuldade para ficar reajustando o experimento conforme o aumento da frequência, por conta da instabilidade do sinal.
+Interferências externas podem ter atrapalhado também no campo magnético.
