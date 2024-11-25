@@ -59,6 +59,17 @@ Raphael Marcelo Costa de Lima
 
 <a href="#materiais-utilizados">3.1 Materiais utilizados</a>
 <br>
+Referencia de materiais:
+<br>
+<a href="#fig_M1">M1 Materiais utilizados</a>
+<br>
+<a href="#fig_M2">M2 Materiais utilizados</a>
+<br>
+<a href="#fig_M3">M3 Materiais utilizados</a>
+<br>
+<a href="#fig_M4">M4 Materiais utilizados</a>
+<br>
+
 <a href="#fig_1"> 3.1.1 Figura 1 - Formato do experimento</a>
 <br>
 <a href="#tabela"> 3.1.2 Tabela de dados</a>
@@ -200,20 +211,38 @@ Lista dos materiais utilizados:
 
 - 1 multímetro MINPA ET2042C
 - 4 cabos (para ligar os componentes)
-- 1 fonte de alimentação
 - gerador de rádio-frequência
 - osciloscópio
 - 2 bobinas de Helmholtz
 
-conectamos os 4 cabos, a fonte, o multímetro (que será utilizado para medir a corrente entre a unidade de controle e as bobinas) e o gerador de radio-frequência.
-<center> <figure id="fig_1">
-<img src="image-1.png" >
-<figcaption><b>Figura 1:</b> Experimento montado sem o osciloscópio fonte: relatório. </figcaption>
+
+<center> <figure id="fig_M1" style="height: 25%; width: 30%;">
+<img src="img1.jpeg" >
+<figcaption><b>Figura M1 </b> Base com as bobinas </figcaption>
 </figure> </center>
 
-precisamos que as bobinas fiquem paralelas, com o "sample probe" aproximadamente na região central entre as duas, e que a distância entre as 2 bobinas deve ser aproximadamente o seu raio.
 
-<div style="page-break-after: always;"></div>
+<center> <figure id="fig_M2" style="height: 25%; width: 50%;">
+<img src="img3.jpeg" >
+<figcaption><b>Figura M2</b> Multimetro </figcaption>
+</figure> </center>
+
+
+<center> <figure id="fig_M3" style="height: 25%; width: 50%;">
+<img src="img4.jpeg" >
+<figcaption><b>Figura M3:</b> Base de Radio frequência </figcaption>
+</figure> </center>
+
+conectamos os 4 cabos com o multímetro (que será utilizado para medir a corrente entre a unidade de controle e as bobinas) e o gerador de radio-frequência.
+
+precisamos que as bobinas fiquem paralelas, com a sonda de amostra aproximadamente na região central entre as duas, e que a distância entre as 2 bobinas deve ser aproximadamente o seu raio.
+
+Conectando a base de radio frequência, com a unidade de sonda e com o osciloscópio, podemos observar no osciloscópio:
+
+<center> <figure id="fig_M4" style="height: 25%; width: 50%;">
+<img src="img5.jpeg" >
+<figcaption><b>Figura M4:</b> Osciloscópio </figcaption>
+</figure> </center>
 
 seguindo o passo a passo ofereceido pelo roteiro, montamos o experimento e fizemos as 10 medidas:
 
@@ -249,7 +278,8 @@ seguindo o passo a passo ofereceido pelo roteiro, montamos o experimento e fizem
 ```
 com as suas respectivas unidades. Não foi pego o erro possível da frequencia, porém temos o erro do multímetro: 2% + 5D.
 
-B foi calculado a partir da fórmula disponível na parte de <b>objetivos</b>
+B foi calculado a partir da fórmula disponível na parte de <a href="#dados-necessários"><b>objetivos</b></a>
+
 
 [Voltar ao sumário](#sumario)
 <div style="page-break-after: always;"></div>
@@ -327,7 +357,9 @@ $g_s = 0.824 +- 0.017$
 
 sabendo que o valor teórico é 2, o nosso dado está bem fora do esperado.
 
-compatibilidade:
+## compatibilidade
+
+Então vamos calcular a compatibilidade:
 
 $|0.824 - 2| / 0.017 < 2 * $ erro menor que 2 desvios padrões
 
@@ -342,5 +374,7 @@ o que é bem distante de 2.
 
 o valor que encontramos é incompatível com o valor esperado.
 Podemos levantar alguns pontos para isso, como a dificuldade para ficar reajustando o experimento conforme o aumento da frequência, por conta da instabilidade do sinal.
+
 Interferências externas podem ter atrapalhado também no campo magnético.
+
 [Voltar ao sumário](#sumario)
