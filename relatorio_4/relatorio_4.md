@@ -8,6 +8,7 @@
   .sumario {
     font-size: 26px;
   }
+
 </style>
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -36,13 +37,13 @@ Raphael Marcelo Costa de Lima
 
 <div style="page-break-after: always;"></div>
 
-<p class="my-heading"> Sumário </p>
+<p class="my-heading" id="sumario"> Sumário </p>
 
 <a class="sumario" href="#introducao"> 1. Introdução</a>
 
 <a href="#o-momento-magnético-e-momento-angular-do-spin">1.1 O momento magnético e momento angular do spin</a>
 <br>
-<a href="#Efeito do campo magnético no momento ângular">1.2 Efeito do campo magnético no momento ângular</a>
+<a href="#efeito-do-campo-magnético-no-momento-ângular">1.2 Efeito do campo magnético no momento ângular</a>
 
 <br>
 
@@ -58,14 +59,18 @@ Raphael Marcelo Costa de Lima
 
 <a href="#materiais-utilizados">3.1 Materiais utilizados</a>
 <br>
-<a href="#fig_1"> 3.1.1 Figura 1 </a>
+<a href="#fig_1"> 3.1.1 Figura 1 - Formato do experimento</a>
 <br>
 <a href="#tabela"> 3.1.2 Tabela de dados</a>
+
+
+<a class="sumario" href="#dados"> 4. Análise de dados </a>
+
+<a href="#fig_2"> 4.1 Visualização dos dados coletados</a>
 <br>
-<a href="#fig_2"> 3.1.3 Visualização dos dados coletados</a>
-
-
-<a class="sumario" href="#dados"> Análise de dados </a>
+<a href="#encontrando-gs-do-experimento"> 4.2 Encontrando o Fator de Landé do experimento </a>
+<br>
+<a href="#incerteza-do-coeficiente-angular-utilizando-monte-carlo"> 4.2 Incerteza do coeficiente angular com monte carlo </a>
 
 <br>
 
@@ -144,6 +149,7 @@ o ângulo $\theta$ será 180
 
 então sabemos que só poderemos ter esses 2 estados do elétron quando está sob efeito de um campo magnético.
 
+[Voltar ao sumário](#sumario)
 <div style="page-break-after: always;"></div>
 
 <p class="my-heading" id="objetivos"> Objetivos </p>
@@ -182,6 +188,7 @@ $\mu_0$ é uma constante conhecida, permissividade do vácuo, dada por: $1.256 \
 
 assim, podemos tentar encontrar $g_s$
 
+[Voltar ao sumário](#sumario)
 <div style="page-break-after: always;"></div>
 
 <p class="my-heading", id="pros_exp"> Procedimento Experimental <p>
@@ -244,6 +251,7 @@ com as suas respectivas unidades. Não foi pego o erro possível da frequencia, 
 
 B foi calculado a partir da fórmula disponível na parte de <b>objetivos</b>
 
+[Voltar ao sumário](#sumario)
 <div style="page-break-after: always;"></div>
 
 <p class="my-heading" id="dados" > Análise de dados <p>
@@ -273,9 +281,14 @@ onde:
 $\LARGE a = \frac{g_s \mu_b}{h}$
 
 note que vamos fazer o mínimos quadrados com Hz e não MHz.
+<figure id="fig_3">
 <img src="image-3.png"></img>
+<figcaption><b>Figura 3:</b> Gráfico com mínimos quadrados. fonte: Autores. </figcaption>
+</figure>
 
-com o nosso valor de a:
+## Encontrando Gs do experimento
+
+com o nosso valor de a (coeficiente angular), podemos encontrar $g_s$ experimental:
 
 a = 11535318040
 
@@ -283,8 +296,9 @@ sabemos que multiplicarmos esse valor pela constante de planck e dividir por $ \
 
 $g_s = 0.824$ (approx)
 
-para calcular o erro que essa regressão contém, podemos fazer simulação de monte-carlo para estimar incertezas:
+## Incerteza do coeficiente angular utilizando monte carlo
 
+para calcular o erro que essa regressão contém, podemos fazer simulação de monte-carlo para estimar incertezas:
 
 o código abaixo pode ser encontrado [neste link](https://github.com/ms-cmy/relatorios-2024-est2/blob/master/relatorio_4/experimento.ipynb)
 
@@ -321,6 +335,7 @@ $70 < 2$
 
 o que é bem distante de 2.
 
+[Voltar ao sumário](#sumario)
 <div style="page-break-after: always;"></div>
 
 <p class="my-heading" id="conclusao"> Conclusão <p>
@@ -328,3 +343,4 @@ o que é bem distante de 2.
 o valor que encontramos é incompatível com o valor esperado.
 Podemos levantar alguns pontos para isso, como a dificuldade para ficar reajustando o experimento conforme o aumento da frequência, por conta da instabilidade do sinal.
 Interferências externas podem ter atrapalhado também no campo magnético.
+[Voltar ao sumário](#sumario)
